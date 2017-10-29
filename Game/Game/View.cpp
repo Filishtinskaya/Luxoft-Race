@@ -37,16 +37,16 @@ void View::updateCar(Car & car)
   picture_[Const::roadLength-1][carX_ + 1] = ']';
 }
 
-void View::updateObstacle(Obstacle* obst)
+void View::updateObstacle(Obstacle & obst)
 {
   for (int i = ox1_; i <= ox2_; i++)
     for (int j = oy1_; j <= oy2_; j++)
       picture_[j][i] = ' ';
 
-  ox1_ = obst -> getx1();
-  ox2_ = obst -> getx2();
-  oy1_ = obst -> gety1();
-  oy2_ = obst -> gety2();
+  ox1_ = obst.getx1();
+  ox2_ = obst.getx2();
+  oy1_ = obst.gety1();
+  oy2_ = obst.gety2();
 
   for (int i = ox1_; i <= ox2_; i++)
     for (int j = oy1_; j <= oy2_; j++)

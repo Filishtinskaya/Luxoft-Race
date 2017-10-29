@@ -78,5 +78,5 @@ void Car::slowDown()
 
 void Car::updateDistance(double timespan)
 {
-  distance_+=speed_*timespan;
+  distance_+=static_cast <int> (speed_*timespan);
 }

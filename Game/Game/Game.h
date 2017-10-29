@@ -15,6 +15,7 @@ class Game
   private:
     Car car_;
     View view_;
+    Obstacle obst_;
     time_t startTime_;
     time_t timer_;
 };

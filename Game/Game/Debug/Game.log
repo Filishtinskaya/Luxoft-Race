@@ -1,11 +1,12 @@
-﻿Сборка начата 27.10.2017 01:33:56.
+﻿Сборка начата 29.10.2017 23:23:45.
      1>Проект "E:\Race\Game\Game\Game.vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Obstacle.cpp
-         Obstacle.cpp
-     1>e:\race\game\game\obstacle.cpp(13): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-     1>e:\race\game\game\obstacle.cpp(33): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
-     1>e:\race\game\game\obstacle.cpp(34): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Game.cpp
+         Game.cpp
+     1>e:\race\game\game\game.cpp(27): warning C4244: аргумент: преобразование "__int64" в "int", возможна потеря данных
+     1>e:\race\game\game\game.cpp(77): warning C4244: +=: преобразование "double" в "time_t", возможна потеря данных
+     1>e:\race\game\game\game.cpp(78): warning C4244: +=: преобразование "double" в "time_t", возможна потеря данных
+     1>e:\race\game\game\game.cpp(84): warning C4244: аргумент: преобразование "__int64" в "int", возможна потеря данных
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Race\Game\Debug\Game.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"E:\Race\Game\Debug\Game.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Race\Game\Debug\Game.lib" /MACHINE:X86 Debug\Car.obj
          Debug\Game.obj
@@ -17,4 +18,4 @@
 
 Сборка успешно завершена.
 
-Затраченное время: 00:00:01.69
+Затраченное время: 00:00:07.11

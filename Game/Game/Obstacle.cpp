@@ -6,6 +6,11 @@
 
 Obstacle::Obstacle()
 {
+  changePos();
+}
+
+void Obstacle::changePos()
+{
   do
   {
     srand (time(0));
@@ -25,19 +30,12 @@ bool Obstacle::checkCrash(int pos)
   return false;
 }
 
-bool Obstacle::moveObstacle(int speed, double timespan)
+void Obstacle::moveObstacle(int speed, double timespan)
 {
-  y2_+=speed*timespan;
-  y1_+=speed*timespan;
-  if (y1_ >= Const::roadLength)
-    y1_ = Const::roadLength - 1;
+  y1_ += static_cast <int> (speed*timespan);
+  y2_ += static_cast <int> (speed*timespan);
   if (y2_ >= Const::roadLength)
-  {
-    y2_ = Const::roadLength - 1;
-  }
-    return false;
-  return true;
-
+    y2_ = y1_;
 }
 
 int Obstacle::getx1()

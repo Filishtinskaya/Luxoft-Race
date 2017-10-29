@@ -15,29 +15,20 @@ Game::Game()
 bool Game::run()
 {
   view_.startMessage();
-  Obstacle* k = new Obstacle;
   while (true)
   {
     if (GetAsyncKeyState(VK_DOWN)) return false;
     else if (GetAsyncKeyState(VK_UP)) break;
   }
-  bool needNewObstacle = false;
   while (true)
   {
-    
-    if (needNewObstacle)
-    {
-      do
-      {
-        delete[] k;
-        k = new Obstacle;
-      }
-      while (k->checkCrash(car_.getPosition()));
-    }
-
     view_.clearAll();
     time (&timer_);
     view_.drawInfo(difftime(timer_, startTime_), car_.getSpeed(), car_.getDistance());
+    std::cout << "Obstacle:" << "x1" << ' ' << obst_.getx1() << ' ' 
+      << "x2" << ' ' << obst_.getx2() << ' ' 
+      << "y1" << ' ' << obst_.gety1() << ' ' 
+      << "y2" << ' ' << obst_.gety2() << '\n';
     view_.printView();
     
     if (GetAsyncKeyState(VK_DOWN)) car_.slowDown();
@@ -55,13 +46,21 @@ bool Game::run()
     else if (GetAsyncKeyState(VK_RETURN)) pause();
     else if (GetAsyncKeyState(VK_ESCAPE)) return gameOver();
  
-    if (k->checkCrash(car_.getPosition())) return gameOver();
+    if (obst_.checkCrash(car_.getPosition())) return gameOver();
 
     time_t now;
     time(&now);
     car_.updateDistance(difftime(now, timer_));
-    needNewObstacle = !(k -> moveObstacle(car_.getSpeed(), difftime(now, timer_)));
-    view_.updateObstacle(k);
+    obst_.moveObstacle(car_.getSpeed(), difftime(now, timer_));
+    if (obst_.gety1() > Const::roadLength)
+    {
+      do
+      {
+        obst_.changePos();
+      }
+      while (obst_.checkCrash(car_.getPosition()));
+    }
+    view_.updateObstacle(obst_);
     view_.updateCar(car_);
   }
   return gameOver();

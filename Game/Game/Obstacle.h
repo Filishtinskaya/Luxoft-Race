@@ -5,8 +5,9 @@ class Obstacle
 {
   public:
     Obstacle();
+    void changePos();
     bool checkCrash(int pos);
-    bool moveObstacle(int speed, double timespan);
+    void moveObstacle(int speed, double timespan);
     int getx1();
     int getx2();
     int gety1();

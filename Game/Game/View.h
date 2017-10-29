@@ -17,7 +17,7 @@ class View
     void startMessage();
     void pauseMessage();
     void updateCar(Car & car);
-    void updateObstacle (Obstacle* obst);
+    void updateObstacle (Obstacle & obst);
   private:
     std::vector <std::vector<char>> picture_; //+2 for borders
     int carX_;
