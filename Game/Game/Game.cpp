@@ -25,10 +25,10 @@ bool Game::run()
     view_.clearAll();
     time (&timer_);
     view_.drawInfo(difftime(timer_, startTime_), car_.getSpeed(), car_.getDistance());
-    std::cout << "Obstacle:" << "x1" << ' ' << obst_.getx1() << ' ' 
+    /*std::cout << "Obstacle:" << "x1" << ' ' << obst_.getx1() << ' ' 
       << "x2" << ' ' << obst_.getx2() << ' ' 
       << "y1" << ' ' << obst_.gety1() << ' ' 
-      << "y2" << ' ' << obst_.gety2() << '\n';
+      << "y2" << ' ' << obst_.gety2() << '\n';*/
     view_.printView();
     
     if (GetAsyncKeyState(VK_DOWN)) car_.slowDown();
